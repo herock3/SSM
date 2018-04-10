@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zyx.web.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.zyx.web.model.User">
+<mapper namespace="com.web.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.web.model.User">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -22,13 +22,13 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zyx.web.model.User">
+  <insert id="insert" parameterType="com.web.model.User">
     insert into user (id, username, password, 
       age)
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.zyx.web.model.User">
+  <insert id="insertSelective" parameterType="com.web.model.User">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -59,7 +59,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zyx.web.model.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.web.model.User">
     update user
     <set>
       <if test="username != null">
@@ -74,7 +74,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zyx.web.model.User">
+  <update id="updateByPrimaryKey" parameterType="com.web.model.User">
     update user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

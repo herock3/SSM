@@ -1,4 +1,4 @@
-package com.zyx.web.model;
+package com.web.model;
 
 public class User {
     private Integer id;

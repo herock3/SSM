@@ -1,6 +1,6 @@
-package com.zyx.web.dao;
+package com.web.dao;
 
-import com.zyx.web.model.User;
+import com.web.model.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
